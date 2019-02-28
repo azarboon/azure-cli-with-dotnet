@@ -13,3 +13,7 @@ RUN apt-key --keyring /etc/apt/trusted.gpg.d/Microsoft.gpg adv --keyserver packa
 
 # Install cli
 RUN apt-get update && apt-get install azure-cli
+
+# Install npm  and related dependencies
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
+&& apt install nodejs && npm i -g yarn 
